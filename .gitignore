@@ -1,0 +1,16 @@
+.idea/*
+*.DS_Store
+*__pycache__*
+*.pyc
+db.sqlite3
+celerybeat-schedule
+celerybeat.pid
+
+# project
+.coveragerc
+libs/*
+libs3.8/*
+htmlcov/*
+static/*
+media/*
+serviceworker/*
