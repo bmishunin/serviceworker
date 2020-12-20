@@ -110,6 +110,7 @@ if (
                       "icon": payload.data.icon,
                       "image": payload.data.image,
                   }
+                  payload.data.body = payload.data.twi_body
 
                   registration.showNotification(payload.data.twi_title, payload.data);
                 }).catch(function(error) {
