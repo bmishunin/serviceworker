@@ -91,6 +91,7 @@ if (
         Notification.requestPermission(function(permission) {
             if (permission === 'granted') {
                 navigator.serviceWorker.ready.then(function(registration) {
+
                   // Copy data object to get parameters in the click handler
                   payload.data.data = JSON.parse(JSON.stringify(payload.data));
 
@@ -101,6 +102,7 @@ if (
                       "image": payload.data.image,
                   };
                   payload.data.body = payload.data.twi_body;
+                  console.log(payload.data)
 
 
                   registration.showNotification(payload.data.twi_title, payload.data);
