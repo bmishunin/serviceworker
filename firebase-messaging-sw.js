@@ -13,8 +13,15 @@ messaging.setBackgroundMessageHandler(function(payload) {
 
   // Copy data object to get parameters in the click handler
   payload.data.data = JSON.parse(JSON.stringify(payload.data));
+  payload.data.data = {
+                      "body": payload.data.twi_body,
+                      "click_action": payload.data.twi_action,
+                      "icon": payload.data.icon,
+                      "image": payload.data.image,
+                  };
+  payload.data.body = payload.data.twi_body;
 
-  return self.registration.showNotification(payload.data.title, payload.data);
+  return self.registration.showNotification(payload.data.twi_title, payload.data);
 });
 
 self.addEventListener('notificationclick', function(event) {
